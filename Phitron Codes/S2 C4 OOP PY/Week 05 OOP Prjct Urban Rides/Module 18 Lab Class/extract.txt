@@ -1,0 +1,22 @@
+
+[
+        {
+                "name" : "plate", 
+                "price" : 150
+        },
+
+        {
+                "name" : "Bowl",
+                "price" : 100
+        },
+
+        {
+                "name" : "spoon",
+                "price" : 50
+        },
+
+        {
+                "name" : "cup",
+                "price" : 70
+        }
+]

@@ -1,0 +1,36 @@
+
+
+
+
+
+
+{% extends 'core/base.html' %}
+
+<!-- 180623, Sunday, 10.00 am   -->
+
+{% block title %}
+
+Validated User Login
+
+{% endblock title %}
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        <form action="" method='POST'>
+
+                {% csrf_token %}
+                {{form|crispy}}
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </form>
+
+{% endblock content %}
+
+
+
+
+

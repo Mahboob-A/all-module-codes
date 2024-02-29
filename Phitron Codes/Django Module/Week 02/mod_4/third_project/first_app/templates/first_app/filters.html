@@ -1,0 +1,54 @@
+
+
+<!-- 
+
+"""
+ACC Django
+Module date : 200523, Saturday 
+Watch begin date : 2100523, Sunday, 06.30 am 
+Watch end date : 250523, Thursday, 06.30 am to 10.00 am  
+
+4.5 Django Template Language - Filtering
+
+"""
+
+-->
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Filters</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="">
+        </head>
+        <body>
+                {% comment %} This is DTL template filters  {% endcomment %}
+
+                
+                
+                <h1>Marks : {{ marks | add:'2' }}</h1>
+                <h1>Name : {{ name | capfirst }} </h1>
+                <h1>Blog : {{ blog | truncatewords:4}}
+                <h2>List Length {{ lst | length  }}</h2>
+                <h2>Blog Title {{ blog | title }}</h2> 
+                <h3>slugify {{ blog | slugify}}</h2>
+                <h4>random : {{ lst | random }}</h4>
+                
+                <a href= {% url 'home' %} > Home </a>
+                <br>
+                {% comment %} {{ escape|linebreaks }}    {% endcomment %}
+                {% comment %} for line break  {% endcomment %}
+                <a href= {% url 'contact' %} > Contact </a>
+
+
+                <script src="" async defer></script>
+        </body>
+</html>

@@ -1,0 +1,59 @@
+
+
+
+{% extends 'core/base.html' %}
+<!-- 190623, Monday, 03.00 pm  -->
+
+{% block title %} Show Books Options {% endblock title%} 
+
+{% block style %}
+
+body {
+  background-color : turquoise 
+}
+
+{% endblock style %}
+
+
+
+{% block content %}
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 15vh;">
+                 <div>
+                        <h1 style="color: purple;">See Books</h1>
+                </div>
+</div>
+
+
+{% endblock content %}
+
+
+
+{% block form_table %}
+<br>
+<br>
+<table style="width: 50%; margin: auto; " class="table table-success table-striped">
+  <thead>
+    {% if input_options %}
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Option</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for id, option in input_options.items %}
+    <tr>
+      <th scope="row">{{id}}</th>
+      <td>{{option}}</td>
+        <!-- in the below anchor tag, inside the url tag, data.roll is passed along with the url as value and this is receive at the urls.py   -->
+      <td><a class='btn btn-info text-white' href="{% url 'process_show_books_link' id %}">Click here</a></td>
+    </tr>
+        {% endfor %} 
+
+    {% endif %}
+    
+  </tbody>
+</table>
+
+{% endblock form_table %}

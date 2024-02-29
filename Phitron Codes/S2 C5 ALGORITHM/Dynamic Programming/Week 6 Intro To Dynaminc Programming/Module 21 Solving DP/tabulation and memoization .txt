@@ -1,0 +1,37 @@
+
+Week 06 : Introduction to Dynamic Programming 
+Module 21: Solving dp problems  
+Module date: 220123, Sunday
+Watch date: 130223, Monday, 08.30 am 
+Mod: 21-3: Tabulation and Memoization in Code 
+
+
+# Memoization-Method (recursive)
+======================
+
+fun(a, b, c ... n)      -> state 
+{
+        step 01: 
+                1. handle base cases 
+        
+        step 02: 
+                2. if current state is already solved, then return the result 
+        
+        step 03: 
+                3. calculate the resutl from the smaller sub-problems. 
+
+}
+
+#Tabulation-Method (iterative)
+===================
+
+int main()
+{
+        step 01: 
+                1. handle base cases 
+        
+        step 02: 
+                2. loop through the states 
+                        2.1. and calculate the answer from the smaller sub-problems 
+
+}

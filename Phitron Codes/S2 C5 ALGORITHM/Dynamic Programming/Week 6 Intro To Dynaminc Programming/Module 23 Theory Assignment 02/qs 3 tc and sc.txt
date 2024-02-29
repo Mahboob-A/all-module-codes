@@ -1,0 +1,1 @@
+The time complexity of the dynamic programming solution for the SPOJ DP problem - Blueberries is O(n * w), where n is the number of blueberries and w is the basket capacity. The space complexity is also O(n * w) as we maintain a 2D table to store the values of sub-problems.

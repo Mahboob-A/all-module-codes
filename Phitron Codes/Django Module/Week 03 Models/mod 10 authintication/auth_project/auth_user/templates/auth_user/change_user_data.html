@@ -1,0 +1,44 @@
+
+{% extends 'core/base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}Change User Data{% endblock title %} 
+
+
+{% block content%}
+
+        <br />
+        <br />
+
+        <h1 style="width: 50%; margin: auto; color: skyblue">Change User Data</h1>
+
+        <br>
+        <br>
+        
+
+        {% if messages %} 
+                {% for m in messages %}
+                <p class="bg-success text-white p-3">{{m}}</p>
+                {% endfor %} 
+                <br>
+        {% endif %}
+
+        <br />
+        <br />
+
+        <form style="width: 50%; margin: auto" action="" method="post">
+                {% csrf_token %} 
+                {{form|crispy}} 
+
+                 {% comment %} {% for fm in form %}
+                  {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} 
+                         {% endfor %}  {% endcomment %}
+        <br>
+        <br>
+        <button class="btn btn-warning" type="submit">Change Data</button>
+        </form>
+        <br>
+        <br>
+       
+
+{% endblock content %}

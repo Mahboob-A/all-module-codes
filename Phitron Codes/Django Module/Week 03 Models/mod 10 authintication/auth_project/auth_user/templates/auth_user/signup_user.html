@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %} 
+
+{% block style %} 
+
+        .success{ 
+                color : green 
+        }
+
+{% endblock style %} 
+
+{% block content%}
+
+
+        <br />
+        <br />
+
+        <h1 style="width: 50%; margin: auto; color: skyblue">Sign Up</h1>
+
+        <br />
+        <br />
+
+        {% if messages %} 
+                {% for m in messages %}
+
+                <small {% if m.tags %} class="{{m.tags}}" {% endif %}>{{m}}</small>
+
+                {% endfor %} 
+        {% endif %}
+
+        <form style="width: 50%; margin: auto" action="" method="post">
+        {% csrf_token %} 
+                {{form|crispy}} 
+
+
+                 {% comment %} {% for fm in form %}
+                  {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} 
+                         {% endfor %}  {% endcomment %}
+        
+        <br>
+        <small style="color:purple">Already have an account?</small> <a href="{% url 'log_in_user_link' %}">Log in</a>
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <br>
+        <br>
+
+
+
+{% endblock content %}

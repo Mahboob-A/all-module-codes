@@ -1,0 +1,6 @@
+
+
+
+
+        /// 21 3 is the full code of linked list 21 3 code has the all operations of a linked list
+        // 200822, saturday

@@ -1,0 +1,18 @@
+#get the values of the dict into a list 
+
+d = {"name":"python", "version":3.9}
+new_list = []
+ 
+new_list = list(map(d.values(), new_list))
+# new_list = list(new_list)
+print((new_list)
+
+
+#get the values of the dict into a list
+
+d = {"name":"python", "version":3.9}
+new_list = []
+ 
+new_list = map(d.get(d.values(), new_list))
+new_list = list(new_list)
+print((new_list)

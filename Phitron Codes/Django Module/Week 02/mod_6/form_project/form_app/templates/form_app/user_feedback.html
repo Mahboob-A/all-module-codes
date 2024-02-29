@@ -1,0 +1,21 @@
+
+{% extends 'core/base.html' %}
+
+{% block title %}  User Feedback  {% endblock title %}  
+
+<!-- using crispy tags  -->
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form  method='POST' action=''>
+
+        {% csrf_token %}
+        {{feedback_form|crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% comment %} {{feedback_form}} {% endcomment %}
+
+
+</form>
+
+{% endblock content %}

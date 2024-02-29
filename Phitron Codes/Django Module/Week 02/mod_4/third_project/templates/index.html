@@ -1,0 +1,63 @@
+
+
+
+""" <br>
+ACC Django <br>
+Module date : 200523, Saturday <br>
+Watch date : 2100523, Sunday, 06.30 am <br>
+
+Vid : 4.1 Rendering Template From Project Folder <br> 
+
+This is showing because I have not commented this in html format. <br> 
+<br>
+
+"""
+
+{% comment %} for using static files  {% endcomment %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Third Project Main Page</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href= {% static 'css/first.css' %} />
+        </head>
+        <body>
+                <!--[if lt IE 7]>
+                        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+                <h1>This is my first HTML writing and first template in Django on 210523, Sunday. </h1>
+                {% comment %} Three ways to insert images {% endcomment %}
+
+                <img src= {% static 'images/do-something-great.jpg'  %} alt="Coder Image" style="width: auto; height: auto; max-width: 100%; max-height: 100%;"/>
+                
+                 {{escape|linebreaks}}
+                {% static 'images/rain-black-3.jpg' as rain_image %}
+                <img src= {{rain_image}} alt="Rain Image" style="width: auto; height: auto; max-width: 100%; max-height: 100%;"/>
+                
+                {{escape|linebreaks}}
+                <img src=" {% get_static_prefix %}images/rain-green-forest-2.jpg" alt="Rain Forest" style="width: auto; height: auto; max-width: 100%; max-height: 100%;"/>
+                
+                <script  src="{% static 'js/index.js' %}"></script>
+                <br>
+                <a href = "https://youtube.com/" target="_blank">Open YT</a>
+                <br>
+                        
+                {{escape|linebreaks}}
+                <a href = {% url 'contact' %}>Contact</a>
+                <br>
+                <a href = {% url 'filters' %}>Filters</a>
+                        
+                <p> This is a paragraph </p>
+                <script src="" async defer></script>
+        </body>
+</html>

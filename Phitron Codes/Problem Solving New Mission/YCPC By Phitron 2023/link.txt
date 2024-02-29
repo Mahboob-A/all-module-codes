@@ -1,0 +1,9 @@
+
+// YCPC by Phitron | 1st Round : Contest 2 | 2023    Details ►
+
+// 060323, Monday, 07.30 pm to 10.30 pm 
+// 11.30 pm 
+
+https://www.hackerrank.com/contests/ycpc-by-phitron-1st-round-beginner-level-contest-2/challenges
+
+sol : https://github.com/Rahat-Khan-Pathan/YCPC-by-Phitron-1st-Round-Beginner-Level-Contest-2-solve

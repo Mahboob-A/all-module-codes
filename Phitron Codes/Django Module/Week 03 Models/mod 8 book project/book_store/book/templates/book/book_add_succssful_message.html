@@ -1,0 +1,122 @@
+
+{% extends 'core/base.html' %}
+
+{% block title %} Successful! {% endblock title %} 
+
+{% block style %}
+
+body {
+        background-color: #22457a
+}
+{% endblock style %}
+
+{% block content %}
+
+<!-- redirects to the book add page   -->
+  {% if redirect_type == 'add_book' %}
+
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 25vh;">
+                  <div>
+                          <h1 style="color: turquoise;">Your Book Is Added Successfully!</h1>
+                          <h4 style="color: seagreen;">You will be redirected to add book soon! if you are not redirected <a href="{% url 'add_books_to_book_store_link' %}">click here</a></h4>
+                          
+                  </div>
+  </div>
+
+    <!-- if redirect_type is add book, , then automatically redirect to add book page -->
+<!-- the page will be redirected to the previous page -->
+<script>  
+    // Wait for the page to load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Redirect to the countdown redirect view after a short delay (e.g., 1 second)
+        setTimeout(function() {
+            window.location.href = "{% url 'add_books_to_book_store_link' %}";
+        }, 5000);
+    });
+</script>
+
+
+<!-- redirects to the show all books page   -->
+  {% elif redirect_type == 'edit_book' %}
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 25vh;">
+                  <div>
+                          <h1 style="color: turquoise;">Your Book Is Edited Successfully!</h1>                                                                           <!-- i am redirecting adter editing to the show book by book id here. earlier I was redirecting to the show all books   -->
+                          <h4 style="color: seagreen;">You will be redirected to see books by book ID soon! if you are not redirected <a href="{% url 'show_books_by_book_id_link' %}">click here</a></h4>
+                          
+                  </div>
+  </div>
+        <script>  
+      // Wait for the page to load
+      document.addEventListener('DOMContentLoaded', function() {
+          // Redirect to the countdown redirect view after a short delay (e.g., 1 second)
+          setTimeout(function() {
+              window.location.href = "{% url 'show_books_by_book_id_link' %}";
+          }, 5000);
+      });
+  </script>
+
+  
+<!-- redirects to the show all books page  after deleting the book by book id  -->
+  {% elif  redirect_type == 'delete_book' %}
+
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 25vh;">
+                  <div>
+                          <h1 style="color: turquoise;">Your Book Is Deleted Successfully!</h1>
+                          <h4 style="color: seagreen;">You will be redirected to see all the books soon! if you are not redirected <a href="{% url 'show_all_books_link' %}">click here</a></h4>
+                          
+                  </div>
+    </div>
+          <script>  
+      // Wait for the page to load
+      document.addEventListener('DOMContentLoaded', function() {
+          // Redirect to the countdown redirect view after a short delay (e.g., 1 second)
+          setTimeout(function() {
+              window.location.href = "{% url 'show_all_books_link' %}";
+          }, 5000);
+      });
+  </script>
+
+
+  {% else %}
+  <h2>something went wrong in book_add_successful_message.html</h2>
+
+{% endif %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+{% comment %} 
+{% block script %}
+  <script>
+    // Wait for the page to load
+    document.addEventListener('DOMContentLoaded', function() {
+      var countdownElement = document.getElementById('countdown');
+      var countdownValue = parseInt(countdownElement.innerHTML);
+      
+      // Update the countdown every second
+      var countdownInterval = setInterval(function() {
+        countdownValue -= 1;
+        countdownElement.innerHTML = countdownValue;
+        
+        if (countdownValue <= 0) {
+          // Redirect to the countdown redirect view
+          window.location.href = "{% url 'add_books_to_book_store_link' %}";
+          clearInterval(countdownInterval);
+        }
+      }, 1000); // Update every second (1000 milliseconds)
+    });
+  </script>
+{% endblock script %} {% endcomment %}
+
+
+
+
+
+

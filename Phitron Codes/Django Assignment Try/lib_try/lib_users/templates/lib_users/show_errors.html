@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Error!{% endblock title %}
+
+
+{% block style %}
+
+.book-description {
+  position: relative;
+}
+
+.preview {
+  margin-bottom: 10px;
+}
+
+
+.container {
+  {% comment %} display: flex; {% endcomment %}
+  align-items: center;
+  justify-content: center;
+  height: 10vh; 
+}
+
+.gradient-text {
+  background-image:radial-gradient(#e66465, #9198e5, yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.empty-message {
+                color: #127;
+                font-style: italic;
+                align-items: center;
+                justify-content: center;
+                height: 10vh;
+        }
+
+
+{% endblock style %}
+
+
+
+
+{% block content %}
+
+ <br>
+<hr>
+ <div class="container">
+
+  <h1 class="text-center gradient-text">Some Error Occured !!</h1>
+
+</div>
+
+{% if book_exists_already_wishlisted %}
+
+<br>
+<br>
+<h2 class="empty-message">You Have Already Wishlisted The Book - {{book.title}}  !!</h2>
+
+
+
+{% elif book_exists_borrowed %}
+
+<br>
+<br>
+<h2 class="empty-message">You Have Already Borrowed The Book - {{book.title}} !!</h2>
+
+{% endif %}
+
+<h4 style="color: turquoise;">You will be redirected to Book List soon! if you are not redirected <a href="{% url 'book_list' %}">click here</a></h4>
+
+<!-- auto return to the Book List Page -->
+<script>
+    var bookListUrl = "{% url 'book_list' %}";
+</script>
+<script src="{% static 'js/countdown.js' %}"></script>
+
+
+{% endblock content %}
+

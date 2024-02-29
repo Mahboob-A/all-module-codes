@@ -1,0 +1,43 @@
+
+{% extends 'core/base.html' %} 
+{% load crispy_forms_tags %}
+<!-- 220623, Thursday, 05.30 pm  -->
+{% block title %}Login{% endblock title %} 
+
+{% block style %} 
+
+
+{% endblock style %} 
+
+{% block content%}
+
+        
+        <h2 style="width:50%; margin:auto; color:skyblue">Login</h2>
+        <form style="width: 50%; margin: auto" action="" method="post">
+        {% csrf_token %} 
+
+        <!-- as I am using the whole form, not breaking in the loop, 
+                it will handle showing the errors if user gives any worng credentsls
+         -->
+                {{form|crispy}} 
+
+                <!-- if the user gives wrong credentials, then form.non_field_errors would produce those errors  -->
+                 {% comment %} {% if form.non_field_errors %}
+                {% for error in form.non_field_errors  %}
+                        <p class="bg-danger text-white p-3">{{error}}</p>
+                {% endfor %}
+                {% endif %}
+
+                 {% for fm in form %}
+                {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} 
+                {% endfor %}  {% endcomment %}
+
+                <small style="color:red">Do not have an account?</small> <a href="{% url 'sign_up_user_link' %}">Sign up</a>
+        <br>
+        <br>
+                <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <br>
+        <br>
+
+{% endblock content %}

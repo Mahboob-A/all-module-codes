@@ -1,0 +1,168 @@
+
+
+<!-- 200623, Tuesday, 04.00 pm  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Base Template{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    {% block styles %}
+    <style>
+        /* Your custom styles go here */
+        body {
+            background-color: LavenderBlush;
+        }
+
+        .navbar {
+            background-color: #16a9e9;
+            color: white;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white !important;
+        }
+    </style>
+    {% endblock styles %}
+</head>
+<body  style="background-color: LavenderBlush;">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home_link' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            {% comment %} <li><a class="dropdown-item" href="{% url 'contactus' %}">Contact Us</a></li> {% endcomment %}
+                            <li><a class="dropdown-item" href="{% url 'show_data_link' %}">Show Data</a></li>
+                            <li><a class="dropdown-item" href="{% url 'get_student_details_link' %}">Get Student Details</a></li>
+                            
+                            <!-- enter your links here  -->
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    {% block table %}{% endblock table %}
+    {% block content %}{% endblock content %}
+
+    <script src="" async defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
+
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title> {% block title %} Base Template {% endblock title %} </title>
+
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="">
+
+                {% block styles %} {% endblock %}
+
+        </head>
+        <body>
+
+
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                                {% url 'home_link' as home_link %}
+                        <a class="nav-link active" aria-current="page" href="{{home_link}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                                {% url 'aboutus' as about_us_link %}
+                        <a class="nav-link" href="{{about_us_link}}">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                                
+                                <li><a class="dropdown-item" href="{% url 'contactus' %}">Contact Us</a></li>
+                                
+                        <li><a class="dropdown-item" href="{% url 'product_link'  %}">Products Page</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{% url 'login_form_link' %}">Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'movie_rating_link' %}">Movie Rating</a></li>
+                        <li><a class="dropdown-item" href="{% url 'user_login_link' %}">User Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'user_feedback_link' %}">User Feedback</a></li>
+                        <li><a class="dropdown-item" href="{% url 'get_user_details_link' %}">User Details</a></li>
+                        <li><a class="dropdown-item" href="{% url 'user_file_upload_link' %}">Upload FIle</a></li>
+                </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                        </li>
+                </ul>
+                <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                </div>
+                </div>
+                </nav>
+                
+                {% block content %}  {% endblock content %}
+                
+                <script src="" async defer></script>
+        </body>
+</html> {% endcomment %}

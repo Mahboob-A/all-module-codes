@@ -1,0 +1,44 @@
+
+
+
+{% comment %} ACC Django
+Week 02  : Django Template
+Module date : 220523, Monday 
+Watch date : 3100523, Wednesday, 11.30 am  
+
+5.1 Adding Bootstrap to our Django Project {% endcomment %}
+
+
+
+<!DOCTYPE html>
+
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Home</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="">
+        </head>
+        <body>
+                <h1>Hi! This is week 02 Module 5 More About Django Templates Session MAIN PAGE.</h1>
+
+                <br> 
+               {% url 'contactus' as contact_us_link %}
+                <a href = "{{contact_us_link}} " > Contact Us </a>
+                
+                <br> 
+                
+                
+                {% url 'aboutus' as about_us_link %}
+                <a href = "{{about_us_link}} " > About Us </a>
+                
+                <br>
+
+                {% url 'product_link' as products_link %}
+                <a href = "{{products_link}} " > Products </a>
+                
+                <script src="" async defer></script>
+        </body>
+</html>

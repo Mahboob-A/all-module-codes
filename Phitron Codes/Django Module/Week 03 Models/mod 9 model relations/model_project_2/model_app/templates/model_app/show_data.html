@@ -1,0 +1,47 @@
+
+{% extends 'core/base.html' %}
+<!-- 200623, Tuesday, 04.00 pm  -->
+
+{% block title %} Show Data {% endblock title%} 
+
+{% block table %}
+<br>
+<br>
+
+{% if is_student_data  and all_student_data %}
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Class</th>
+      <th scope="col">Section</th>
+      <th scope="col">Payment</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in all_student_data %}
+    <tr>
+      <th scope="row">{{data.roll}}</th>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.student_class}}</td>
+      <td>{{data.section}}</td>
+      <td>{{data.payment}}</td>
+      <td>{{data.address}}</td>    <!-- in the below anchor tag, inside the url tag, data.roll is passed along with the url as value and this is receive at the urls.py   -->
+      <td><a class='btn btn-danger text-white' href="{% url 'delete_data_link' data.roll %}">Delete</a></td>
+    </tr>
+        {% endfor %} 
+
+    {% else %}
+
+    <h3>No data available</h3>
+
+    {% endif %}
+    
+  </tbody>
+</table>
+
+{% endblock table %}

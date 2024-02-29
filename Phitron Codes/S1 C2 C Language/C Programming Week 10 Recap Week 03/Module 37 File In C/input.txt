@@ -1,0 +1,16 @@
+hello
+I am mahoob alam. 
+
+I am learning computer science technology from phitron.
+
+It's 220622, Wednesday, 1051 am.
+
+
+I am now learning file operation in C language. 
+
+It is very interesting topic to learn.
+
+I am enjoying learning file in C chapter.
+
+
+Happy Learning!!

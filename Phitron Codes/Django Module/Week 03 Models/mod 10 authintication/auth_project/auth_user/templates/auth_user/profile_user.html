@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %} 
+
+
+{% block title %}Profile{% endblock title %} 
+
+{% block style %} 
+
+
+{% endblock style %} 
+
+{% block content%}
+
+        <br>
+        <br>
+
+        <h2 style="width:50%; margin:auto; color:skyblue">Welcome Mr. {{user}} to your profile</h2>
+        <h3 style="width:50%; margin:auto; color:blue">Profile page is under construction!</h3>
+
+        <br>
+        <br>
+        <br>
+        <p class="btn btn-warning" style="width:30%; margin:auto;"><a href="{% url 'change_pass_with_old_pass_link' %}">Change Pasword With Old Pasword</a></p>
+        <br>
+        <br>
+        <p class="btn btn-warning" style="width:30%; margin:auto;"><a href="{% url 'change_pass_without_old_pass_link' %}">Change Pasword Without Old Pasword</a></p>
+        <br>
+        <br>
+        <p class="btn btn-warning" style="width:30%; margin:auto;"><a href="{% url 'change_user_data_link' %}">Change User Data</a></p>
+        <br>
+        
+{% endblock content %}

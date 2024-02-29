@@ -1,0 +1,6 @@
+
+I am Mahboob Alam.
+
+I live at Kharibona, Raghunathganj, Murshidabad.
+
+It's 220622, 11.50 am today and I am learning file handling in C.

@@ -1,0 +1,33 @@
+
+{% extends 'core/base.html' %}
+
+{% comment %} ACC Django
+Week 02  : Django Template
+Module date : 220523, Monday 
+Watch date : 010523, Thursday, 06.00 pm 
+
+5.1 Adding Bootstrap to our Django Project {% endcomment %}
+
+
+<!-- loading my customer filter here. It is defined in templatetags folder -->
+<!-- this is in 5.5 video and I watched practiced it in 160623, Friday, 08.00 am  -->
+{% load my_filter %}
+
+<!-- 160623, Friday, 09.00 am 5.5 vid  -->
+<!-- loading my custom made template here it works same like include tag  -->
+{% load my_template %}
+
+{% block title %} Products  {% endblock title %}   
+
+{% block content %} 
+
+
+<h1>This is Products page </h1>
+
+
+<h2> Procducts Page 010623, Thursday, 06.00 pm </h2> 
+{{name|generalFilter:'truncate'}}
+
+{% show_courses %}
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+print ('Hello World')
+
+"""
+def gcd(a, b) :
+    if b == 0:
+        return a 
+    else: 
+        return gcd(b, a%b)
+        
+x = gcd(100, 56)
+print(x)
+
+print(4 / 56)
+"""
+
+print("""Helllllloo! I am Mahboob A and here I am to tell you a secret!
+A secret of what has been, of course an open secret for decades 
+and with out furtheur ado, 
+let us talk about the secret 
+we were to talk about!
+So, Here's the 
+thing i wanted to tell!""")

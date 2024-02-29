@@ -1,0 +1,110 @@
+
+<!-- 
+
+"""
+ACC Django
+Module date : 200523, Saturday 
+Watch date : 2100523, Sunday, 06.30 am 
+
+4.2 Rendering Template From Application
+
+"""
+
+-->
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Contact</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href={% static 'assets/css/first.css' %}/>
+        </head>
+        <body>
+               
+                <h1> Hi, This is the first app Contact page</h1>
+                <p>So, this is the first app page created on 210523, Sunday, 09.00 am </p>
+                <p>Author : {{author}} </p>
+
+                {% comment %} Mod 4 - 7 Static Files in App  {% endcomment %}
+                
+                <img src={% static 'assets/images/rain-roof-2.jpg' %} alt="Rain Roof"style="width: auto; height: auto; max-width: 100%; max-height: 100%;"/>
+
+                <!-- Adding the link to home-->
+                <!-- add  this : -> {} here % url 'url name' % this would add the url pattern (func) to the page -->
+                
+{% comment %}                 
+                {% if age >= '18' %}
+                <p> Hi, you are eligible to buy our course. 
+                {% else %}
+                <p> Sorry, you are not eligible to buy our course </p> 
+                {% endif %}
+
+                {%if marks >= 90 and marks <= 100 %}
+                <p> Congratulations on getting 90% marks. </p>
+                {% elif  marks >= 60 and marks <= 90  %}
+                <p> Hi, you have got medium marks </p>
+                {% else %}
+                <p> Sorry, you have failed </p>
+                {% endif %} {% endcomment %}
+                        
+                <table border="1" width = 500>
+                        <tr>
+                                <td>ID</td>
+                                <td>Course</td>
+                                <td>Instructure</td>
+                        </tr>
+
+                        {% comment %} {% for course_item in list_1 %}
+                                <tr>
+                                        <td>{{course_item.id}}</td>
+                                        <td>{{course_item.course}}</td>
+                                        <td>{{course_item.teacher}}</td>
+                                </tr>
+                        {% endfor %}  {% endcomment %}
+
+                        {% comment %} {% for course_item in list_2 %}
+                                <tr>
+                                                <td>{{course_item.id}}</td>
+                                                <td>{{course_item.course}}</td>
+                                                <td>{{course_item.teacher}}</td>
+                                </tr>
+                        {% endfor %}  {% endcomment %}
+
+
+                      {% for course_list in course_dict.values %}
+                                {% for course_item in course_list  %}
+                                        <tr>
+                                                <td>{{course_item.id}}</td>
+                                                <td>{{course_item.course}}</td>
+                                                <td>{{course_item.teacher}}</td>
+                                        </tr>
+                                        {% endfor %}
+                        {% endfor %}  
+                      {% comment %} {% for course_item in courses.list_2 %}
+                                <tr>
+                                        <td>{{course_item.id}}</td>
+                                        <td>{{course_item.course}}</td>
+                                        <td>{{course_item.teacher}}</td>
+                                </tr>
+                        {% endfor %}   {% endcomment %}
+
+
+                </table>
+
+                <a href = {% url 'home' %} >Home</a>
+                <br>
+                <a href= {% url 'filters' %}>Filters</a>
+                
+                <script src="" async defer></script>
+        </body>
+</html>

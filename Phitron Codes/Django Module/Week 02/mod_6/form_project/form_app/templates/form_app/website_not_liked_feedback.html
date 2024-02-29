@@ -1,0 +1,26 @@
+
+
+{% extends 'core/base.html' %}
+
+{% block title %} Websie Not Liked Feedback  {% endblock title %}   
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form action="" method='POST'>
+
+        {% csrf_token %}
+        {{website_not_liked_feedback_from|crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+
+{% endblock content %}
+
+
+
+

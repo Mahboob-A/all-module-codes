@@ -1,0 +1,41 @@
+
+{% extends 'core/base.html' %}
+<!-- 180623, Sunday, 03.00 pm  -->
+
+{% block title %} Example Data From DB {% endblock title%} 
+
+{% block table %}
+<br>
+<br>
+<table class="table table-success table-striped">
+  <thead>
+    {% if example_db %}
+    <tr>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in example_db %}
+    <tr>
+      <th scope="row">{{data.roll}}</th>
+      <td>{{data.name}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.address}}</td>    <!-- in the below anchor tag, inside the url tag, data.roll is passed along with the url as value and this is receive at the urls.py   -->
+      <td><a class='btn btn-danger text-white' href="{% url 'delete_example_data_link' data.roll %}">Delete</a></td>
+    </tr>
+        {% endfor %} 
+
+    {% else %}
+
+    <h3>No data available</h3>
+
+    {% endif %}
+    
+  </tbody>
+</table>
+
+{% endblock table %}

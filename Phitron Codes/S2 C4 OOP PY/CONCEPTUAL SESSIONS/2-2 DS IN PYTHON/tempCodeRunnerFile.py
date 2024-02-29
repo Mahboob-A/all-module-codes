@@ -1,0 +1,5 @@
+_at_tail()
+        lst.delete_at_tail()
+        lst.delete_at_tail()
+        lst.delete_at_tail()
+        lst.delete_at_tail()

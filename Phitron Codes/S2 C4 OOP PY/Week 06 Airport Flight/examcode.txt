@@ -1,0 +1,149 @@
+
+""" 
+Py week 06
+Exam code 05 | 121122, Saturday, 10.00 am 
+"""
+
+
+import glob
+import shutil
+from os import remove, path, rmdir, mkdir
+from zipfile import ZipFile
+
+source_path = '../source/*'
+destination_path = '../destination/'
+mkdir('ziptemp')
+internal_tmp_path = './ziptemp'
+
+postfix_numbers = [1, 2, 3]
+
+
+source_object = glob.glob(source_path)
+print("1. Source Object: ", source_object)
+
+object_path = source_object[0]
+print("2. Object Path:  ", object_path)  # str  ../source\source_file.txt
+
+
+# writing the lines
+# with open(source_object[0], 'a') as file:
+#         for line in range(0, 30):
+#                 file.write(f'This is line {str(line)}.')
+
+
+
+# copyting the object from the source to server i.e here using '.' dot operator
+# shutil.copy(object_path, './ziptemp/copyfile.txt')
+
+current_object = object_path.split('\\')[1]
+print("3. Current Obejct :  ", current_object)
+
+
+object_name = object_path.split('\\')[1].split('.')
+print("4. Object Name: ", object_name)
+
+# file_path, object_name = path.split(object_path)
+# print("4. File Path: ",file_path)
+# print("5. Object Name2: ", object_name.split('.'))
+
+prefix_name = object_name[0]
+postfix_name = object_name[1]
+print(prefix_name)   # source_file
+print(postfix_name)  # txt
+
+for postfix_value in range(len(postfix_numbers)):
+        file_name = prefix_name + '_' + str(postfix_numbers[postfix_value]) + '.' + postfix_name
+
+        shutil.copy(object_path, f'{internal_tmp_path}/{file_name}')
+
+with open(object_path, 'r') as file:
+        lines = file.readlines()
+
+for textfile in range(len(postfix_numbers)):
+        with open(f'{internal_tmp_path}/{prefix_name}_{textfile+1}.{postfix_name}', 'r+') as file:  # opening the file
+                file.truncate()
+                for line in range((textfile+1)*10):
+                        file.write(lines[line])
+
+shutil.make_archive('zippedfile', 'zip', internal_tmp_path)
+shutil.copy(f'./zippedfile.zip', destination_path)   # the file is in server 
+
+shutil.unpack_archive('zippedfile.zip', destination_path)
+remove(f'{destination_path}zippedfile.zip')   # removing from destionation 
+remove('./zippedfile.zip')    # removing from server 
+shutil.rmtree(internal_tmp_path) 
+
+# with ZipFile(f'{destination_path}zippedfile.zip', 'r') as file:
+#         file.extractall(destination_path)
+
+
+
+
+
+
+
+
+
+
+
+
+#         # remove(object_path)
+#         # remove(current_object_path)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# import glob
+# source_path = '../source/*'
+
+# source_object = glob.glob(source_path)
+
+# print(source_object)
+# object_path = source_object[0]
+# print(object_path)
+
+# # writing the lines 
+# # with open(source_object[0], 'a') as file:
+# #         for line in range(0, 30):
+# #                 file.write(f'This is line {str(line)}\n')
+
+# group_no = 1
+# lst = []
+# with open(object_path, 'r') as file:
+#         lines = file.readlines()
+#         for group in lines:
+#                 lst.append(group)
+
+# print(lines)
+# # line_no = 0 
+# # for i in range(1, 4):
+# #         print(i)
+# #         print(lines[i*5])
+# # # print(lines[1])

@@ -1,0 +1,29 @@
+
+
+{% extends 'core/base.html' %}
+
+<!-- 200623, Tuesday, 04.00 pm  -->
+
+{% block title %} User Details {% endblock title %} 
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        {% comment %} {% csrf_token %}
+        {{model_form|crispy}}
+         {% endcomment %}
+
+        <div style='width:50%; margin:auto'>
+
+                <form method="post">
+                        {% csrf_token %}
+                        {{model_form|crispy}}
+                        <button class="btn btn-info  " type="submit">Submit</button>
+                </form>
+
+        </div>
+
+
+{% endblock content %}
+

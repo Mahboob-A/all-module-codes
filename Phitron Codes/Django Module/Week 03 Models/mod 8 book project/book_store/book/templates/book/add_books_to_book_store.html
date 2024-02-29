@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %} 
+{% block title %} Add Book{% endblock title %} 
+{%load crispy_forms_tags %} 
+{% block style %} 
+body { 
+        background-color: #58a78f 
+}
+{% endblock style %} 
+
+{% block form_table %} 
+
+{% comment %}
+<div style="width: 50%; margin: auto">
+  <h1>Welcome!</h1>
+  <h3>Add Books Here</h3>
+</div>
+{% endcomment %} 
+
+{% if form_type == 'add_book' %}
+
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+  "
+>
+  <div>
+    <h1 style="color: turquoise">Welcome</h1>
+    <h3 style="color: seagreen">Add Book</h3>
+  </div>
+</div>
+
+<!-- the form is here  -->
+{% include 'book/add_books_helper.html' %} 
+
+{% elif form_type == 'edit_book' %}
+
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+  "
+>
+  <div>
+    <h1 style="color: turquoise">Welcome</h1>
+    <h3 style="color: seagreen">Edit Book</h3>
+  </div>
+</div>
+
+<!-- the form is here  -->
+{% include 'book/add_books_helper.html' %} 
+
+{% else %}
+
+<h2>something went wrong in add_books_to_book_store.html</h2>
+
+{% endif %} 
+
+{% endblock form_table %}
+
+{% block content %} 
+
+{% endblock content %}

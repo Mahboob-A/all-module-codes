@@ -1,0 +1,36 @@
+
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 15vh;">
+                 <div>
+                        <h1 style="color: purple;">These books are available</h1>
+                </div>
+</div>
+
+<br>
+<br>
+<table style="width: 80%; margin: auto; " class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Category</th>
+      <th scope="col">First Publication</th>
+      <th scope="col">Current Publication</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in all_books_data %}
+    <tr>
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.book_name}}</td>
+      <td>{{data.author}}</td>
+      <td>{{data.category}}</td>
+      <td>{{data.first_pub}}</td>
+      <td>{{data.last_pub}}</td>
+      <td><a class='btn btn-warning btn-sm text-white' href="{% url 'edit_books_link' data.id %}">Edit</a> <a class='btn btn-danger btn-sm text-white' href="{% url 'delete_books_link' book_id=data.id %}">Delete</a></td>
+    </tr>
+        {% endfor %} 
+  </tbody>
+</table>

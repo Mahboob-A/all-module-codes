@@ -1,0 +1,14 @@
+030723, Monday
+1.  can not filter based on date in transaction report => the error is TypeError at /transactions/report/
+
+'coroutine' object is not subscriptable
+
+
+2. After loggin in, the path should be home path with the navbar but the paht goes to to incorrect path : 
+http://127.0.0.1:8000/accounts/profile/     
+
+# FIXES : 
+
+2. This is fixed as the auth uses functionalities from django.contrib.auth and as the default 
+login urlconf is 'accounts/profile'
+changed the default to home using LOGIN_REDIRECT_URL = '/' in settings.py 

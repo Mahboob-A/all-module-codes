@@ -1,0 +1,261 @@
+
+
+
+            /// here's the input of the program:
+12
+170
+Chicken Soup 1:2
+260
+171
+Chicken Corn Soup 1:2
+200
+172
+Thai Special Soup 1:2
+300
+260
+Chicken Fried Rice 1:2
+250
+261
+Egg Fried Rice 1:2
+230
+262
+Prawn Fried Rice 1:2
+300
+310
+Beef Mutton Kabab 1:1
+150
+311
+Chicken Grill 1:4
+340
+450
+Chicken Curry 1:3
+550
+451
+Beef Special Curry 1:3
+760
+452
+Chicken Sizzling 1:3
+710
+453
+Beef Sizzling 1:3
+970
+
+
+            And here's the question pdf link:
+
+            https://docs.google.com/document/d/1WGzTkKoSY4Oui_-kfhE3FO541XkaITEqGAEb4H6fm4A/edit
+
+            Here's my answer link:
+
+            https://docs.google.com/document/d/1JGs9NuK7MBu0UzaYY3I_HSWwbUusIBb4VgwEjfNowrc/edit
+
+            240722, saturday.
+
+
+
+
+
+
+            /// jubayer bhai's code of exam 01
+
+            link: https://ideone.com/f2huWR?fbclid=IwAR0oS6Hy511lMgpyWpk7Ykd-WQ3RXLyKUEZnnp9cRaRJOWz7rZ1oasDo0AQ
+
+
+
+
+            #include<bits/stdc++.h>
+
+using namespace std;
+
+
+
+class Restaurant
+{
+    public:
+
+
+        int food_item_codes[12];
+        string food_item_names[12];
+        int food_item_prices[12];
+
+    protected:
+
+        double total_tax;
+
+    public:
+
+        Restaurant(){
+
+          total_tax = 0;
+
+        }
+
+        void tax_update(double tax){
+
+            this->total_tax+=tax;
+
+        }
+
+        double tax_update(){
+
+          return this->total_tax;
+
+        }
+
+
+
+
+};
+
+
+
+
+int main(){
+
+
+    Restaurant *my_restaurant = new Restaurant();
+
+
+    while(true){
+
+        int n;
+
+    cin>>n;
+
+
+
+    for(int i=0; i<n; i++){
+
+
+       cin>>my_restaurant->food_item_codes[i];
+
+       getchar();
+
+       getline (cin, my_restaurant->food_item_names[i]);
+
+
+       cin>>my_restaurant->food_item_prices[i];
+    }
+
+   cout<<endl;
+
+   cout<<"\t\t MAKE BILL"<<endl;
+
+   cout<<"\t\t______________"<<endl;
+
+   cout<<endl;
+
+   cout<<"Item Code"<<"\t"<<"Item Name"<<"\t \t \t"<<"Item Price"<<endl;
+
+   for(int i=0; i<n; i++){
+
+       cout<<my_restaurant->food_item_codes[i]<<"\t \t"<<my_restaurant->food_item_names[i]<<"\t \t"<<my_restaurant->food_item_prices[i]<<endl;
+
+    }
+
+    cout<<endl;
+
+    int table,items;
+
+    cout<<"Enter Table NO : ";
+
+    cin>>table;
+
+    cout<<"Enter Number of Items : ";
+
+    cin>>items;
+
+    int code[items],quantity[items];
+
+    int num=0;
+
+
+    for(int i=0; i<items; i++){
+
+        bool found = false;
+
+        cout<<"Enter Item "<<i+1<<" Code : ";
+
+        cin>>code[i];
+
+       for(int num=0; num<n; num++){
+
+            if(my_restaurant->food_item_codes[num] == code[i]){
+
+              found = true;
+
+            }
+
+       }
+
+
+        if(found == false){
+
+            cout<<"This code is not valid"<<endl;
+            cout<<"Enter Item "<<i+1<<" Code Again : ";
+
+            cin>>code[i];
+        }
+
+        cout<<"Enter Item "<<i+1<<" Quantity : ";
+
+        cin>>quantity[i];
+    }
+
+    cout<<endl;
+
+
+    cout<<"\t\tBILL SUMMARY"<<endl;
+
+    cout<<"\t\t_____________"<<endl;
+
+
+    cout<<endl;
+
+    cout<<"Table Number : "<<table<<endl;
+
+    cout<<endl;
+
+    cout<<"Item Code\tItem Name\t\t\tItem Price\tItem Quantity\tTotal Price"<<endl;
+
+    int idx = 0,normal_bill = 0;
+
+    for(int i=0; i<n; i++){
+
+        if(code[idx] == my_restaurant->food_item_codes[i]){
+
+            cout<<my_restaurant->food_item_codes[i]<<"\t\t"<<my_restaurant->food_item_names[i]<<"\t\t"<<my_restaurant->food_item_prices[i]<<"\t\t"<<quantity[idx]<<"\t\t"<<my_restaurant->food_item_prices[i]*quantity[idx]<<endl;
+
+            normal_bill+=my_restaurant->food_item_prices[i]*quantity[idx];
+
+            idx++;
+        }
+    }
+
+  double tax = normal_bill * 0.05;
+
+  my_restaurant->tax_update(tax);
+
+  double total_bill = normal_bill + tax;
+
+  cout<<"Tax\t\t\t\t\t\t\t\t\t\t"<<tax;
+
+  cout<<endl;
+  cout<<endl;
+  cout<<endl;
+
+  cout<<"NET TOTAL\t\t\t\t\t\t\t\t\t"<<total_bill<<" Taka"<<endl;
+    }
+
+
+
+
+
+
+  return 0;
+
+
+}
+
+
+

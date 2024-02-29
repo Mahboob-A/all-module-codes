@@ -1,0 +1,6 @@
+
+
+    /// all the modules of 29 of binary tree part one is theoritical.
+    // all the theories have been written in the YT and Class notebook.
+    // please refer to the notebooks for further reference.
+    // module watch completion date: 080822, Thursday.

@@ -1,0 +1,29 @@
+
+
+
+<br>
+<br>
+<br>
+
+<table style="width: 50%; margin: auto; " class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Category</th>
+      <th scope="col">First Publication</th>
+      <th scope="col">Current Publication</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{book_data.id}}</th>
+      <td>{{book_data.book_name}}</td>
+      <td>{{book_data.author}}</td>
+      <td>{{book_data.category}}</td>
+      <td>{{book_data.first_pub}}</td>
+      <td>{{book_data.last_pub}}</td>
+      <td><a class='btn btn-warning btn-sm text-white' href="{% url 'edit_books_link' book_data.id %}">Edit</a> <a class='btn btn-danger btn-sm text-white' href="{% url 'delete_books_link' book_id=book_data.id %}">Delete</a></td>
+    </tr>

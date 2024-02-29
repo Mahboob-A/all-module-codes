@@ -1,0 +1,127 @@
+
+
+{% extends 'core/base.html' %}
+
+{% block title %} Successful!  {% endblock title %}   
+
+{% block content %}
+
+        <!-- only if the value is here -->
+        <!-- 
+                I am redirecting to this template form two scenario. 
+                1. login form 
+                2. movie rating 
+
+                if select is present then it is coming from the movie rating and if username if 
+                true, then it is redirected from the login form. 
+
+                i am checking select at first because the login form also passes username, but it does not 
+                pass select. (select is the dropdown selection of rating)
+                and the movie rating view also passes username. so, if username is being checked first, 
+                then both call will be true. so I am checking select first, if select is true, then it is must form 
+                movie rating view. 
+
+           -->
+        {% if select %}  
+        
+           {% if select|default:0|add:0 >= 3 %}
+            <br>
+            <h1>Welcome {{ username }}</h1>
+            <br>
+            <h2>Thank you for your {{ select }} rating.</h2>
+            <br>
+            <h3>Wow! We appreciate your taste!</h3>
+        {% else %}
+            <br>
+            <h1>Welcome {{ username }}</h1>
+            <br>
+            <h2>Thank you for your {{ select }} rating.</h2>
+            <br>
+            <h3>Sorry to hear you did not like the movie.</h3>
+        {% endif %}
+
+        <!-- if movie rating view if called -->
+        {% elif username %}
+
+                <br>
+                <h1>Welcome {{username}} </h1>
+                <br>
+                <h2>You are now logged in</h2>
+                <br>
+
+                <h3>Here's your details</h3>
+                <br>
+                <h3>Name : {{username}} </h3>
+                <h3>Email : {{email}} </h3>
+                <h3>Password : {{password}}</h3>
+                <br>
+
+                <!-- this handles the user feedback part  # taking favorite_food as this is required and value can't be as 0 or false --> 
+        {% elif favorite_food %}    
+
+                        <br>
+
+                        <h1>Thank You For Your Submission!</h1>
+                        <h2>Here's what you have submitted</h2>
+                        {% if like_website %}
+                                <div>
+                                        <h3 style="display: inline-block; margin-right: 10px;">Like website :</h3>
+                                        <h4 style="display: inline-block;">YES!</h4>
+                                        <h4>We are glad that you like our website!</h4>
+                                </div>
+                
+                        {% else %}
+                                <div>
+                                        <h3 style="display: inline-block; margin-right: 10px;">Like website :</h3>
+                                        <h4 style="display: inline-block;">NO!</h4>
+                                        <h4>We feel sad that you had not good session with our website. </h4>
+                                        <h4 style="display: inline-block; margin-right: 10px;">Could you tell us more how can we do better ?</h4>
+                                        <a href="{% url 'website_not_liked_feedback_link' %}">Click Here</a>
+
+                                        
+                                </div>
+                                
+                        {% endif %}
+                                
+                        <!-- these two are required -->
+                        <h4>Favorite food : {{favorite_food}}</h4>
+                        <h4>Favorite color : {{favorite_color}}</h4>
+
+                        {% if favorite_number %}
+                                <h4>Favorite number : {{favorite_number}}</h4>
+                        {% else %}
+                                <h4>You have not provided your favorite number</h4>
+                        {% endif %}
+                        
+                        {% if notes %}
+                        
+                                <h3>Here's your note : </h3>
+                                <h4>{{notes}}</h4>
+
+                        {% else %}
+                                <h4>You have not provid any note</h4>
+
+                        {% endif %}
+
+        <!-- this is coming from website not liked feedback form  -->
+        {% elif additional_notes %}
+                        
+                <h2>Thank you for your kind feedback!</h2>
+                <h3>Here's what you have told us: </h3>
+                {{additional_notes}}
+
+  
+         <!-- if this template link is directly called -->
+        {% else %}
+
+                <h2>Opps!! You lost!?</h2>
+                <h4>You are not suppose to be here!</h4>
+
+        {% endif %}
+        
+
+
+
+{% endblock content %}
+
+

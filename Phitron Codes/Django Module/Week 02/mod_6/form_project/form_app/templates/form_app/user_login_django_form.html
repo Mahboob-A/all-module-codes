@@ -1,0 +1,29 @@
+
+
+{% extends 'core/base.html' %}
+
+<!-- ১৭০৬২৩, শনিবার , ০৭.০০ am  -->
+{% block title %}
+User Login 
+{% endblock title %}
+
+{% block content %}
+
+<form action="" method='POST'>
+        {% csrf_token %}
+
+        <table>
+
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </table>
+
+
+</form>
+
+{% endblock content %}
+
+
+

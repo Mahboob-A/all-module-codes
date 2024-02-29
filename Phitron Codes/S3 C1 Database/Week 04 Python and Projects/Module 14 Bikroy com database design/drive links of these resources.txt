@@ -1,0 +1,12 @@
+2. Module 14: ER Diagram  (Module date : 190323, Sunday ) (Watch date : Begin watch :: 080423, Saturday, 05.00 am | Watch Ended On : ) (Other Current Course : None) (DB Current Week and Module : Main Course Ended On 250323, Saturday) 
+    
+    
+    No module text today. 
+    
+    // [BIKROY.COM](http://BIKROY.COM) database design - DDL (data definition language - MySQL code) : 
+    
+    [https://drive.google.com/file/d/1MLsLto5u8nEidT9k0iP3TpcCrxzCqtgB/view](https://drive.google.com/file/d/1MLsLto5u8nEidT9k0iP3TpcCrxzCqtgB/view)
+    
+    // [BIKROY.COM](http://BIKROY.COM) database design - ER DIAGRAM
+    
+    [https://drive.google.com/file/d/1zwQ9_GUtiawyP5r2OKZUVklnz3aH2PcX/view](https://drive.google.com/file/d/1zwQ9_GUtiawyP5r2OKZUVklnz3aH2PcX/view)

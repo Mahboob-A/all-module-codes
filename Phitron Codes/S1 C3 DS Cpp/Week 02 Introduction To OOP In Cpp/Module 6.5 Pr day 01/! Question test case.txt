@@ -1,0 +1,22 @@
+Mehboob a 10 99 mak
+Alam b 15 88 llk
+Alan c 22 85 ppn
+Max d 24 76 kkj
+Bitmax a 17 79 ggk
+y
+
+!!! English marks updation of Alan is successfully completed !!!
+
+The updated marks of the requested student is: as follows:: 
+
+Name:[Alan] Section:[c] Roll:[22] Updated English Marks:[99]
+
+The marks of all other stuents are: as follows:: 
+
+Name:[Mehboob] Section:[a] Roll:[10] Updated English Marks:[99]
+Name:[Alam] Section:[b] Roll:[15] Updated English Marks:[88]
+Name:[Max] Section:[d] Roll:[24] Updated English Marks:[76]
+Name:[Bitmax] Section:[a] Roll:[17] Updated English Marks:[79]
+
+
+https://ideone.com/e.js/Ockzwb

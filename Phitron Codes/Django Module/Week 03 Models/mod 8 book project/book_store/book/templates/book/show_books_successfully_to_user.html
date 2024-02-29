@@ -1,0 +1,84 @@
+
+
+
+
+{% extends 'core/base.html' %}
+
+{% block title %} Books Result {% endblock title %} 
+
+{% load crispy_forms_tags %}
+
+{% block style %}
+
+body {
+        background-color : #5B5EA6
+}
+
+{% endblock style %}
+
+{% comment %} {% block content %}
+
+        <h3 style="width: 50%; margin: auto; color: purple ">
+                Book
+        </h3>
+
+{% endblock content %} {% endcomment %}
+
+
+
+
+{% block form_table %}
+
+        {% comment %} {% include 'book/loop_books_data.html' %} {% endcomment %}
+
+<br>
+<br>
+    
+
+
+      <!-- when edit a book by book id, I am showing here that particular book after update  -->
+      <!-- book_data is passed for both if and elif, that's why checking if edited_book==True kina  -->
+     {% if edited_book %}
+      <h3 style="width: 40%; margin: auto; color: skyblue"> Here Is The Updated Book Details For Book ID {{book_data.id}}</h3>
+        {% include 'book/show_single_book_by_id.html' %}
+
+
+    <!-- if the post request is made to see a book by book id, then if is true  -->
+    {% elif book_data %}
+        
+        <h3 style="width: 40%; margin: auto; color: skyblue"> Here Is The Details For Book ID {{book_data.id}}</h3>
+          {% include 'book/show_single_book_by_id.html' %}
+
+
+
+    {% elif error_message_id %}
+
+    <h3 style="width: 40%; margin: auto; color: red">
+        {{error_message_id}}
+    </h3>
+
+    <!-- showing all books data  -->
+    {% elif all_books_data %}
+    
+        {% include 'book/loop_books_data.html' %}
+
+        <!-- error message for all books data if no books are available  -->
+    {% elif error_message_all_books %}
+
+        <h3 style="width: 40%; margin: auto; color: red">
+        {{error_message_all_books}}
+        </h3>
+  
+
+    {% else %}
+
+    <h2>something went wrong in show_books_successfully_to_user.html</h2>
+
+    {% endif %}
+    
+  </tbody>
+</table>
+
+{% endblock form_table %}
+
+

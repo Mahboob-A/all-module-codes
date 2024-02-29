@@ -1,0 +1,5 @@
+
+
+
+            /// Vid 40 1 and 40 2 are conceptual. See notebook for information about Graph.
+            // 250922, Sunday, 07.00 am

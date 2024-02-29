@@ -1,0 +1,15 @@
+this week started on 171222, Saturday
+today is 211222, Wednesday.
+I was busy these 4 days for the interview of Phitron intern.
+
+the first interview was in 191222, Monday and it was a disaster.
+and the team gave me another chance and the second interview was yeaterday and Alhumdulliah, yesterday was 
+much better.
+
+so i am resuming my study after the interview. 
+
+this is week two of Graph Theory. 
+this week we will learn about BFS and DFS. 
+i am revising DS course's graph theory first.
+
+then i might complete this course's vids. 

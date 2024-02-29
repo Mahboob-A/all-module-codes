@@ -1,0 +1,241 @@
+
+
+
+
+
+
+
+
+/*
+
+
+                              ___,--------,____
+                      __--~~~~                 ~~---,_
+                   ,-'                  __,--,_       `\,___,-,__
+                ,-'                 __/'/-~~~\  `  ` . '    , |  `~~\
+             _/`      _/~~      '~~   \,_\_ O /        '  '~_/'      `\
+           /'        '                   =-'~~  _  /  ~   /'          `\
+        _/'  /~                            ,--,____,-----|,_,-,_       `\
+    _,/'    '              ,-'      _      `~'------'~~~~~--    `~~~~\  |
+ ,-'             /~       '    ,-~~~         _,       ,-=~~~~~~~~~~~~'| |
+~              .'             '         ,   '      /~`                |/
+                                  /' ,/'       _/~'
+                   ,       /    /`          _/~
+        /~        /      /`               /'
+      .'                                /'
+                       /'      .      /
+                      `       /'     |
+                                    '
+
+
+
+
+*/
+
+
+/*  
+===========
+Problem Solving New Mission 
+===========
+Week 02 - 210223, Tuesday to 270223, Monday
+Day 04 : 240223, Friday
+Time : 11.00 pm 
+===========
+Ladder : https://earthshakira.github.io/a2oj-clientside/server/Ladder11.html
+===========
+QS = 6 || A. Cards with Numbers || https://codeforces.com/problemset/problem/254/A
+===========
+
+===========
+Mahboob Alam 
+===========
+*/
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define loop(i, x, y) for(int i=x; i<y; i++)
+#define Loop(i, x, y) for(int i=x; i<=y; i++)
+#define loop(y) for(int i=0; i<y; i++)
+#define For(y) for(int i=1; i<=y; i++)
+
+#define FIO ios_base::sync_with_stdio(false); cin.tie(NULL);
+#define loop(i, y) for(int i=0; i<y; i++)
+#define For(i, y) for(int i=1; i<=y; i++)
+#define pii pair<int, int>
+#define f first
+#define s second
+#define vec vector<int>
+#define vecPii vector<pair<int, int>> 
+#define pb push_back 
+#define ppb pop_back 
+#define DOUBLE_INF 1e18 
+#define INT_INF 1e8
+vector<int>answer_1;
+vector<pii>allSrc;
+pii src, destination;
+
+//priority_queue<int, vec, greater<int>>q;
+
+
+/* ================================================================ */
+
+/*  
+Understanding: 
+
+
+
+*/
+
+int main(){
+
+	FIO 
+
+
+
+
+        
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// #define loop(i, x, y) for(int i=x; i<y; i++)
+// #define Loop(i, x, y) for(int i=x; i<=y; i++)
+// #define loop(y) for(int i=0; i<y; i++)
+// #define For(y) for(int i=1; i<=y; i++)
+
+#define loop(i, y) for(int i=0; i<y; i++)
+#define For(i, y) for(int i=1; i<=y; i++)
+#define pii pair<int, int>
+#define f first
+#define s second
+#define vec vector<int>
+#define vecPii vector<pair<int, int>> 
+#define pb push_back 
+#define ppb pop_back 
+#define DOUBLE_INF 1e18 
+#define INT_INF 1e9 
+const int N = 1e5+100;
+vector<int>ans1;
+vector<pii>allSrc;
+pii src, destination;
+//priority_queue<int, vec, greater<int>>q;
+vec adjList[N];
+int visited[N];
+int parent[N];
+int dist[N];
+int n, m;
+
+int main(){
+
+	ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+
+
+	cin>>n>>m;
+	for(int i=0; i<m; i++)
+	{
+		int u, v;
+		cin>>u>>v;
+		adjList[u].pb(v);
+		adjList[v].pb(u);
+	}
+	
+
+	return 0;
+}
+
+// fast io 
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// #define loop(i, x, y) for(int i=x; i<y; i++)
+// #define Loop(i, x, y) for(int i=x; i<=y; i++)
+// #define loop(y) for(int i=0; i<y; i++)
+// #define For(y) for(int i=1; i<=y; i++)
+
+#define loop(i, y) for(int i=0; i<y; i++)
+#define For(i, y) for(int i=1; i<=y; i++)
+#define pii pair<int, int>
+#define f first
+#define s second
+#define vec vector<int>
+#define vecPii vector<pair<int, int>> 
+#define pb push_back 
+#define ppb pop_back 
+#define DOUBLE_INF 1e18 
+#define INT_INF 1e9 
+const int N = 1e5+100;
+vector<int>ans1;
+vector<pii>allSrc;
+pii src, destination;
+//priority_queue<pii, vecPii, greater<pii>>q;
+vecPii adjList[N];
+int visited[N];
+int parent[N];
+int dist[N];
+int n, m;
+
+
+
+
+
+// 020223, Thursday, 10.00 am 
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// #define loop(i, x, y) for(int i=x; i<y; i++)
+// #define Loop(i, x, y) for(int i=x; i<=y; i++)
+// #define loop(y) for(int i=0; i<y; i++)
+// #define For(y) for(int i=1; i<=y; i++)
+
+#define loop(i, y) for(int i=0; i<y; i++)
+#define For(i, y) for(int i=1; i<=y; i++)
+#define pii pair<int, int>
+#define f first
+#define s second
+#define vec vector<int>
+#define vecPii vector<pair<int, int>> 
+const int N = 50;
+int visited[N][N];
+int matrix[N][N];   // alphabet
+int lenArr[N][N]; // array to alphabet array
+// vector<vector<char>>matrix(N, vector<char>(N));
+// vector<vector<int>>visited;
+// vector<vector<int>>lenArr;
+vector<int>ans1;
+vector<pii>src;
